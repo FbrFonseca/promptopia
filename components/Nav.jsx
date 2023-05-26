@@ -12,7 +12,7 @@ const Nav = () => {
 
   useEffect(() =>{
 
-    const setProviders = async () => {
+    const setUpProviders = async () => {
 
       const response = await getProviders();
 
@@ -20,7 +20,7 @@ const Nav = () => {
 
     }
 
-    setProviders();
+    setUpProviders();
 
   }, [])
 
@@ -30,14 +30,14 @@ const Nav = () => {
       <Link href="/" className="flex gap-2 flex-center">
         <Image
           src="/assets/images/logo.svg"
-          alt="Promptopia Logo"
+          alt="Logo"
           width={30}
           height={30}
           className="object-contain"
         />
         <p className="logo_text">Promptopia</p>
       </Link>
-
+      
       {/* Desktop Navigation */}
       <div className="sm:flex hidden">
       {session?.user ? (
@@ -53,10 +53,10 @@ const Nav = () => {
 
           <Link href="/profile">
             <Image
-              src="/assets/images/logo.svg"
+              src={session?.user.image}
               width={37}
               height={37}
-              className="rouded-full"
+              className="rounded-full"
               alt="profile"
             />
           </Link>
@@ -85,10 +85,10 @@ const Nav = () => {
           {session?.user ? (
           <div className="flex">
             <Image
-              src="/assets/images/logo.svg"
+              src={session?.user.image}
               width={37}
               height={37}
-              className="rouded-full"
+              className="rounded-full"
               alt="profile"
               onClick={() => setToggleDropdown((prev) => !prev)}
             />
@@ -114,7 +114,7 @@ const Nav = () => {
                     setToggleDropdown(false);
                     signOut();
                   }}
-                  className="mt-5 w-full back_btn"
+                  className="mt-5 w-full black_btn"
                 >
                   Sign Out
                 </button>
