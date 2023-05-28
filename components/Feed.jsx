@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 import React from 'react';
 import { useState, useEffect } from "react";
@@ -7,13 +7,14 @@ import PromptCard from './PromptCard';
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
     <div className='mt-16 prompt_layout'>
-      {data.map((post) => {
+      {data.map((post) => (
         <PromptCard 
           key={post._id}
           post={post}
           handleTagClick={handleTagClick}
         />
-      })}
+        
+      ))}
     </div>
   )
 }
@@ -35,6 +36,8 @@ const Feed = () => {
       setPosts(data)
     }
 
+    console.log(posts);
+
     fetchPosts();
   }, []);
 
@@ -46,13 +49,14 @@ const Feed = () => {
           type='text'
           placeholder='Search for a tag or a username'
           value={searchText}
+          onChange={handleSearchChange}
           required
           className='search_input peer'
         />
       </form>
 
       <PromptCardList 
-        data={[posts]}
+        data={posts}
         handleTagClick={() => {}}
       />
     </section>
