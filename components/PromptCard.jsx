@@ -12,7 +12,7 @@ const PromptCard = ({ post, handleTagClick, handleEdit, handleDelete }) => {
       <div className="flex justify-between items-start gap-5">
         <div>
           <Image 
-          src={post.creator.image}
+          //src={post.creator.image}
           alt="user_image"
           width={40}
           height={40}
