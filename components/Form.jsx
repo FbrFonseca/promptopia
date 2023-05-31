@@ -1,8 +1,7 @@
 import React from 'react'
 import Link from 'next/link'
 
-const Form = ({
-  type,  post,  setPost,  submitting,  handleSubmit}) => {
+const Form = ({ type,  post,  setPost,  submitting,  handleSubmit }) => {
 
   return (
     <section className='w-full max-w-full flex-start flex-col'>
@@ -14,11 +13,15 @@ const Form = ({
         any AI-powered platform
       </p>
 
-      <form onSubmit={handleSubmit}
-      className='mt-10 w-full max-w-2x1 flex flex-col gap-7 glassmorphism'>
+      <form 
+        onSubmit={handleSubmit}
+        className='mt-10 w-full max-w-2x1 flex flex-col gap-7 glassmorphism'
+      >
         <label>
           <span className='font-satoshi font-semibold text-base text-gray-700'
-          >Your AI Prompt</span>
+          >
+            Your AI Prompt
+          </span>
 
           <textarea
             value={post.prompt}
@@ -54,10 +57,8 @@ const Form = ({
           type='submit'
           disabled={submitting}
           className='px-5 py-1.5 text-sm bg-primary-orange rounded-full text-white'>
-            {submitting ? `${type}ing...` : type}
+            {submitting ? `${type}...` : type}
           </button>
-
-
         </div>
 
       </form>

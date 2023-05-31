@@ -3,6 +3,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
 import PromptCard from './PromptCard';
+import { useStyleRegistry } from 'styled-jsx';
 
 const PromptCardList = ({ data, handleTagClick }) => {
   return (
